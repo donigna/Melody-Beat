@@ -201,7 +201,11 @@ void Init()
 void MainMenu()
 {
     BeginDrawing();
-    ClearBackground(BLACK);
+    Rectangle sourceRec = {0.0f, 0.0f, (float)background.width, (float)background.height};
+    Rectangle destRec = {0.0f, 0.0f, (float)GetScreenWidth(), (float)GetScreenHeight()};
+    Vector2 origin = {0.0f, 0.0f};
+    float rotation = 0.0f;
+    DrawTexturePro(background, sourceRec, destRec, origin, rotation, WHITE);
 
     DrawText("MELODY BEAT", GetScreenWidth() / 2 - MeasureText("RHYTHM GAME", 80) / 2, center.y - 100, 80, RED);
 

@@ -10,10 +10,10 @@ public:
 class IScoreSubject
 {
 public:
-    virtual ~IScoreSubject() = default;
     virtual void Attach(IScoreObserver *observer) = 0;
     virtual void Detach(IScoreObserver *observer) = 0;
     virtual void Notify() = 0;
+    virtual ~IScoreSubject() = default;
 };
 
 class ScoreUI : public IScoreObserver

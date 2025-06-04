@@ -17,6 +17,8 @@ private:
     Music music;
 
 public:
+    GameManager(GameManager const &) = delete;
+    void operator=(GameManager const &) = delete;
     static GameManager &GetInstance()
     {
         static GameManager instance;
@@ -44,7 +46,4 @@ public:
     void RestartGame();
     void EndGame();
     void ExitPlayMode();
-
-    GameManager(GameManager const &) = delete;
-    void operator=(GameManager const &) = delete;
 };
